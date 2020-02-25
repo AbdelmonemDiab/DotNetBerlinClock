@@ -19,6 +19,7 @@ namespace BerlinClock
             get { return "\n"; } 
            
         }
+
         /// <summary>
         /// Convert Time to Berlin Clock
         /// </summary>
@@ -77,13 +78,19 @@ namespace BerlinClock
 
             return sb.ToString();
         }
-
-        private string getLampRow(int totalNumberLamps, int numberLampsOn, string lampSymbol)
+        /// <summary>
+        /// Construct the lamp row based on the total number of lamps and the 
+        /// </summary>
+        /// <param name="totalNumberLamps"> the total number of lamps per row</param>
+        /// <param name="numberLampsOn"> number of Lamps On in the row</param>
+        /// <param name="lampColor"> Lamp Color</param>
+        /// <returns></returns>
+        private string getLampRow(int totalNumberLamps, int numberLampsOn, string lampColor)
         {
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < numberLampsOn; i++)
             {
-                sb.Append(lampSymbol);
+                sb.Append(lampColor);
             }
             for (int i = numberLampsOn; i < totalNumberLamps; i++)
             {
